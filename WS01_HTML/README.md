@@ -1,1 +1,0 @@
-## Tämä on ensimmäisen työpajan asioille tarkoitettu kansio
