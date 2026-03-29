@@ -3,6 +3,12 @@
     <head>
         <meta charset="UTF-8">
         <title>Lea Salonen</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            h2 {
+                color: #3b1f1f;
+            }
+        </style>
     </head>
     <body>
         <div style="display: flex; align-items: center; gap: 20px;">
@@ -36,7 +42,7 @@
         </p>
     
         <h2>Tämän hetken kurssit (Q2 2026)</h2>
-    <table border="1">
+    <table>
         <tr>
             <th>Kurssi</th>
             <th>Laajuus</th>
@@ -54,14 +60,15 @@
             <td>5 op</td>
         </tr>
     </table>
-<h2>Ota yhteyttä</h2>
+<div class="form-box">
+    <h2>Ota yhteyttä</h2>
     <form>
-        <label>Nimi:</label><br>
-        <input type="text" name="name"><br><br>
-        <label>Sähköposti:</label><br>
-        <input type="email" name="email"><br><br>
+        <label>Nimi:</label>
+        <input type="text" name="name">
+        <label>Sähköposti:</label>
+        <input type="email" name="email">
         <button type="submit">Lähetä</button>
     </form>
-
+</div>
     </body>
 </html>
