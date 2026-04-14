@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lea Salonen</title>
+        <link rel="stylesheet" href="Styles/style.css">
+    </head>
+    <body>
+
+        <!-- Semantic structure: header contains navigation and hero -->
+        <header>
+            <nav>
+                <ul class="nav-list">
+                    <li><a href="#esittely">Esittely</a></li>
+                    <li><a href="#kokemus">Kokemus</a></li>
+                    <li><a href="#osaaminen">Osaaminen</a></li>
+                    <li><a href="#projektit">Projektit</a></li>
+                    <li><a href="#yhteys">Yhteys</a></li>
+                </ul>
+            </nav>
+            <div class="hero">
+                <img src="lea.jpg" alt="Kuva Lea Salosesta" width="150" class="filter-image">
+                <div class="hero-text">
+                    <h1 title="Tältä sivulta löydät minusta lisätietoja">Moikka, olen Lea!</h1>
+                    <p class="subtitle">Tuotesuunnittelija / Tuotehallinta</p>
+                    <p>Kuusi vuotta tuotehallinnan rakentamista Buildien sisällä – teknisestä tuesta tuotekokonaisuuksien omistajaksi. Yhdistän liiketoiminnan, teknologian ja käyttäjätarpeet oikeasti vaikuttavaksi tuotekehitykseksi.</p>
+                    <div class="hero-links">
+                        <a href="https://www.linkedin.com/in/lea-salonen-473432173/?originalSubdomain=fi"
+                           target="_blank"
+                           rel="noopener noreferrer">LinkedIn</a>
+                        <button class="transition-button">Lataa CV</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- Section: Esittely -->
+            <section id="esittely">
+                <blockquote class="quote">
+                    Paras tuote syntyy kuuntelemalla käyttäjää – ei arvailemalla.
+                </blockquote>
+                <p>Olen rakentanut uraani käytännön tekemisen kautta – asiakastyöstä strategiseen tuotehallintaan. Hyödynnän aktiivisesti tekoälyratkaisuja tuotekehityksen nopeuttamisessa, erityisesti prototyyppien rakentamisessa ja ideoinnin alkuvaiheessa.</p>
+            </section>
+
+            <!-- Section: Kokemus -->
+            <section id="kokemus">
+                <h2>Kokemus</h2>
+                <ul class="kokemus-list">
+                    <li>
+                        <span class="kokemus-year">Nykyinen</span>
+                        <div class="kokemus-role">
+                            <strong>Product Designer (Product Management)</strong>
+                            <span>Buildie Oy — Vastaan omien tuotekokonaisuuksien liiketoiminnallisesta arvosta ja kehitystarpeiden määrittelystä. Osallistun roadmap-työhön ja kehityksen priorisointiin koko yrityksen tasolla.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="kokemus-year">2023–2024</span>
+                        <div class="kokemus-role">
+                            <strong>Service Designer</strong>
+                            <span>Buildie Oy — Tunnistin asiakastutkimukseen perustuen kasvumahdollisuuksia ja uusia tuotekehitystarpeita. Konseptoin ratkaisuja toteuttamiskelpoisiksi kehityspaketeiksi.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="kokemus-year">2021–2023</span>
+                        <div class="kokemus-role">
+                            <strong>Product Specialist</strong>
+                            <span>Buildie Oy — Vastasin asiakkuuksien käytön kehittämisestä ja organisaatioiden muutosjohtamisesta. Kehitin toimialan käytäntöjä ja määrittelin vaatimuksia käyttöympäristöille.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="kokemus-year">2020–2021</span>
+                        <div class="kokemus-role">
+                            <strong>Technical Support Coordinator</strong>
+                            <span>Buildie Oy — Vastasin teknisestä tuesta ja sen prosessien kehittämisestä. Koulutin asiakkaita ja vastasin käyttöönottojen määrittelystä.</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section: Osaaminen -->
+            <section id="osaaminen">
+                <h2>Ydinosaaminen</h2>
+                <ul class="pseudo-list">
+                    <li>Tuotehallinta ja roadmap-työ</li>
+                    <li>Tuotekokonaisuuksien omistajuus</li>
+                    <li>Liiketoimintalähtöinen priorisointi</li>
+                    <li>Konseptointi ja palvelumuotoilu</li>
+                    <li>Asiakasymmärrys ja kenttätutkimus</li>
+                    <li>AI ja uudet teknologiat tuotekehityksessä</li>
+                </ul>
+            </section>
+
+            <!-- Section: Työskentelytapani — Flex layout -->
+            <section id="tyoskentelytapa">
+                <h2>Työskentelytapani</h2>
+                <!-- Flex layout: display flex, justify-content, align-items, gap -->
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <span class="flex-number">01</span>
+                        <h3>Tutki</h3>
+                        <p>Kuuntelen käyttäjiä, kartoitan tarpeet ja tunnistan ongelmat ennen kuin teen päätöksiä.</p>
+                    </div>
+                    <div class="flex-item">
+                        <span class="flex-number">02</span>
+                        <h3>Jäsennä</h3>
+                        <p>Muutan löydöt selkeiksi prioriteeteiksi ja rakennan yhteisen ymmärryksen tiimin kanssa.</p>
+                    </div>
+                    <div class="flex-item">
+                        <span class="flex-number">03</span>
+                        <h3>Toteuta</h3>
+                        <p>Vien ratkaisut käytäntöön iteratiivisesti – ja kerään palautetta koko matkan ajan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Projektiesimerkkejä — Grid layout -->
+            <section id="projektit">
+                <h2>Projektiesimerkkejä</h2>
+                <!-- Grid layout: display grid, grid-template-columns repeat(3, 1fr), gap -->
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h3>Turvallisuusominaisuus</h3>
+                        <p>Uudistimme turvallisuusominaisuuden kaupallisesti toimivaksi kokonaisuudeksi. Olen pitänyt aiheesta puheenvuoroja kattojärjestöissä.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Tekoälyominaisuudet</h3>
+                        <p>Määrittelin ja toin tekoälyominaisuuksia osaksi tuotetta konkreettista asiakasarvoa tuottavalla tavalla.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Roadmap & priorisointi</h3>
+                        <p>Kehityksen priorisointi liiketoimintahyödyn näkökulmasta koko tuotteen tasolla yhteistyössä teknisen Product Ownerin kanssa.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Käyttäjätutkimus</h3>
+                        <p>Haastattelut, kyselyt ja kenttätyö kasvumahdollisuuksien ja uusien tuotekehitystarpeiden tunnistamiseksi.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Palvelumuotoilu</h3>
+                        <p>Konseptointi ja ratkaisupakettien rakentaminen asiakastutkimuksesta toteuttamiskelpoiseen muotoon.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Asiakaskehitys</h3>
+                        <p>Asiakaspolkujen kartoittaminen, käyttöönottomäärittelyt ja muutosjohtaminen organisaatioissa.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Responsive demo: background color changes via media query -->
+            <section class="responsive-section">
+                <div class="responsive-box">
+                    <p>Näytön koko vaikuttaa tähän osioon</p>
+                </div>
+            </section>
+
+            <!-- Section: Yhteys -->
+            <section id="yhteys">
+                <div class="form-box">
+                    <h2>Ota yhteyttä</h2>
+                    <form>
+                        <label for="name">Nimi:</label>
+                        <input type="text" name="name" id="name">
+                        <label for="email">Sähköposti:</label>
+                        <input type="email" name="email" id="email">
+                        <button type="submit">Lähetä</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Semantic structure: footer -->
+        <footer>
+            <p>© 2026 Lea Salonen</p>
+        </footer>
+
+    </body>
+</html>
