@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="fi">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Lea Salonen</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="Styles/style.css">
+    </head>
+    <body>
+
+        <!-- Semantic structure: header contains navigation and hero -->
+        <header>
+            <!-- Task 1: Bootstrap responsive navbar -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">Lea Salonen</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="#esittely">Esittely</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#kokemus">Kokemus</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#osaaminen">Osaaminen</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#projektit">Projektit</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#yhteys">Yhteys</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <div class="hero">
+                <!-- Task 2: Responsive image with max-width: 100% and height: auto -->
+                <img src="lea.jpg" alt="Kuva Lea Salosesta" class="filter-image responsive-image">
+                <div class="hero-text">
+                    <h1 title="Tältä sivulta löydät minusta lisätietoja">Moikka, olen Lea!</h1>
+                    <p class="subtitle">Tuotesuunnittelija / Tuotehallinta</p>
+                    <p>Kuusi vuotta tuotehallinnan rakentamista Buildien sisällä – teknisestä tuesta tuotekokonaisuuksien omistajaksi. Yhdistän liiketoiminnan, teknologian ja käyttäjätarpeet oikeasti vaikuttavaksi tuotekehitykseksi.</p>
+                    <div class="hero-links">
+                        <a href="https://www.linkedin.com/in/lea-salonen-473432173/?originalSubdomain=fi"
+                           target="_blank"
+                           rel="noopener noreferrer">LinkedIn</a>
+                        <button class="transition-button">Lataa CV</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main>
+
+            <!-- Section: Esittely -->
+            <section id="esittely">
+                <blockquote class="quote">
+                    Paras tuote syntyy kuuntelemalla käyttäjää – ei arvailemalla.
+                </blockquote>
+                <p>Olen rakentanut uraani käytännön tekemisen kautta – asiakastyöstä strategiseen tuotehallintaan. Hyödynnän aktiivisesti tekoälyratkaisuja tuotekehityksen nopeuttamisessa, erityisesti prototyyppien rakentamisessa ja ideoinnin alkuvaiheessa.</p>
+            </section>
+
+            <!-- Section: Kokemus -->
+            <section id="kokemus">
+                <h2>Kokemus</h2>
+                <ul class="kokemus-list">
+                    <li>
+                        <span class="kokemus-year">Nykyinen</span>
+                        <div class="kokemus-role">
+                            <strong>Product Designer (Product Management)</strong>
+                            <span>Buildie Oy — Vastaan omien tuotekokonaisuuksien liiketoiminnallisesta arvosta ja kehitystarpeiden määrittelystä. Osallistun roadmap-työhön ja kehityksen priorisointiin koko yrityksen tasolla.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="kokemus-year">2023–2024</span>
+                        <div class="kokemus-role">
+                            <strong>Service Designer</strong>
+                            <span>Buildie Oy — Tunnistin asiakastutkimukseen perustuen kasvumahdollisuuksia ja uusia tuotekehitystarpeita. Konseptoin ratkaisuja toteuttamiskelpoisiksi kehityspaketeiksi.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="kokemus-year">2021–2023</span>
+                        <div class="kokemus-role">
+                            <strong>Product Specialist</strong>
+                            <span>Buildie Oy — Vastasin asiakkuuksien käytön kehittämisestä ja organisaatioiden muutosjohtamisesta. Kehitin toimialan käytäntöjä ja määrittelin vaatimuksia käyttöympäristöille.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="kokemus-year">2020–2021</span>
+                        <div class="kokemus-role">
+                            <strong>Technical Support Coordinator</strong>
+                            <span>Buildie Oy — Vastasin teknisestä tuesta ja sen prosessien kehittämisestä. Koulutin asiakkaita ja vastasin käyttöönottojen määrittelystä.</span>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <!-- Section: Osaaminen -->
+            <section id="osaaminen">
+                <h2>Ydinosaaminen</h2>
+                <ul class="pseudo-list">
+                    <li>Tuotehallinta ja roadmap-työ</li>
+                    <li>Tuotekokonaisuuksien omistajuus</li>
+                    <li>Liiketoimintalähtöinen priorisointi</li>
+                    <li>Konseptointi ja palvelumuotoilu</li>
+                    <li>Asiakasymmärrys ja kenttätutkimus</li>
+                    <li>AI ja uudet teknologiat tuotekehityksessä</li>
+                </ul>
+            </section>
+
+            <!-- Section: Työskentelytapani — Flex layout -->
+            <section id="tyoskentelytapa">
+                <h2>Työskentelytapani</h2>
+                <!-- Flex layout: display flex, justify-content, align-items, gap -->
+                <div class="flex-container">
+                    <div class="flex-item">
+                        <span class="flex-number">01</span>
+                        <h3>Tutki</h3>
+                        <p>Kuuntelen käyttäjiä, kartoitan tarpeet ja tunnistan ongelmat ennen kuin teen päätöksiä.</p>
+                    </div>
+                    <div class="flex-item">
+                        <span class="flex-number">02</span>
+                        <h3>Jäsennä</h3>
+                        <p>Muutan löydöt selkeiksi prioriteeteiksi ja rakennan yhteisen ymmärryksen tiimin kanssa.</p>
+                    </div>
+                    <div class="flex-item">
+                        <span class="flex-number">03</span>
+                        <h3>Toteuta</h3>
+                        <p>Vien ratkaisut käytäntöön iteratiivisesti – ja kerään palautetta koko matkan ajan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Section: Projektiesimerkkejä — Grid layout -->
+            <section id="projektit">
+                <h2>Projektiesimerkkejä</h2>
+                <!-- Grid layout: display grid, grid-template-columns repeat(3, 1fr), gap -->
+                <div class="grid-container">
+                    <div class="grid-item">
+                        <h3>Turvallisuusominaisuus</h3>
+                        <p>Uudistimme turvallisuusominaisuuden kaupallisesti toimivaksi kokonaisuudeksi. Olen pitänyt aiheesta puheenvuoroja kattojärjestöissä.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Tekoälyominaisuudet</h3>
+                        <p>Määrittelin ja toin tekoälyominaisuuksia osaksi tuotetta konkreettista asiakasarvoa tuottavalla tavalla.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Roadmap & priorisointi</h3>
+                        <p>Kehityksen priorisointi liiketoimintahyödyn näkökulmasta koko tuotteen tasolla yhteistyössä teknisen Product Ownerin kanssa.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Käyttäjätutkimus</h3>
+                        <p>Haastattelut, kyselyt ja kenttätyö kasvumahdollisuuksien ja uusien tuotekehitystarpeiden tunnistamiseksi.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Palvelumuotoilu</h3>
+                        <p>Konseptointi ja ratkaisupakettien rakentaminen asiakastutkimuksesta toteuttamiskelpoiseen muotoon.</p>
+                    </div>
+                    <div class="grid-item">
+                        <h3>Asiakaskehitys</h3>
+                        <p>Asiakaspolkujen kartoittaminen, käyttöönottomäärittelyt ja muutosjohtaminen organisaatioissa.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 1: Responsive two-column layout -->
+            <section id="responsive-demo">
+                <h2>Responsiivinen asettelu</h2>
+                <div class="responsive-container">
+                    <div class="column">
+                        <h3>Sarake 1</h3>
+                        <p>Desktopilla kaksi saraketta vierekkäin, mobiililla päällekkäin.</p>
+                    </div>
+                    <div class="column">
+                        <h3>Sarake 2</h3>
+                        <p>Pienennä selaimen ikkunaa nähdäksesi asettelun muuttuvan.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 3: Media query background color change -->
+            <section class="responsive-section">
+                <div class="media-query-box">
+                    <p>Muuta ikkunan kokoa nähdäksesi taustavärin vaihtuvan</p>
+                </div>
+            </section>
+
+            <!-- Task 2: Bootstrap Grid Layout -->
+            <section id="bootstrap-grid">
+                <h2>Bootstrap Grid</h2>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-4 col-12">Sarake 1</div>
+                        <div class="col-md-4 col-12">Sarake 2</div>
+                        <div class="col-md-4 col-12">Sarake 3</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 3: Bootstrap Buttons -->
+            <section id="bootstrap-buttons">
+                <h2>Bootstrap Napit</h2>
+                <button class="btn btn-primary">Primary</button>
+                <button class="btn btn-secondary">Secondary</button>
+                <button class="btn btn-success">Success</button>
+                <button class="btn btn-danger">Danger</button>
+                <button class="btn btn-warning">Warning</button>
+            </section>
+
+            <!-- Task 4: Bootstrap Card -->
+            <section id="bootstrap-card">
+                <h2>Bootstrap Kortti</h2>
+                <div class="card" style="width: 18rem;">
+                    <img src="lea.jpg" class="card-img-top" alt="Kuva Lea Salosesta">
+                    <div class="card-body">
+                        <h5 class="card-title">Lea Salonen</h5>
+                        <p class="card-text">Tuotesuunnittelija ja tuotehallinnan ammattilainen. Kuusi vuotta kokemusta Buildien sisällä.</p>
+                        <a href="#yhteys" class="btn btn-primary">Ota yhteyttä</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Task 5: Bootstrap Alert -->
+            <section id="bootstrap-alert">
+                <h2>Bootstrap Alertit</h2>
+                <div class="alert alert-warning" role="alert">
+                    Tämä on warning-alert — kokeile myös muita tyylejä!
+                </div>
+                <div class="alert alert-success" role="alert">
+                    Tämä on success-alert!
+                </div>
+                <div class="alert alert-danger" role="alert">
+                    Tämä on danger-alert!
+                </div>
+                <div class="alert alert-info" role="alert">
+                    Tämä on info-alert!
+                </div>
+            </section>
+
+            <!-- Section: Yhteys -->
+            <section id="yhteys">
+                <div class="form-box">
+                    <h2>Ota yhteyttä</h2>
+                    <form>
+                        <label for="name">Nimi:</label>
+                        <input type="text" name="name" id="name">
+                        <label for="email">Sähköposti:</label>
+                        <input type="email" name="email" id="email">
+                        <button type="submit">Lähetä</button>
+                    </form>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Semantic structure: footer -->
+        <footer>
+            <p>© 2026 Lea Salonen</p>
+        </footer>
+
+        <!-- Bootstrap JavaScript -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    </body>
+</html>
