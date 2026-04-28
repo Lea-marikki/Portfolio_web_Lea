@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Lea Salonen — Projektit. Tuotekehitysprojektit ja tutkimukset Buildie Oy:llä." />
+  <title>Projektit — Lea Salonen</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Lea Salonen</a>
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse" data-bs-target="#mainNav"
+        aria-controls="mainNav" aria-expanded="false" aria-label="Avaa navigaatio">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Etusivu</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">Minusta</a></li>
+          <li class="nav-item"><a class="nav-link" href="skills.html">Osaaminen</a></li>
+          <li class="nav-item"><a class="nav-link active" href="projects.html">Projektit</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Yhteystiedot</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero">
+    <div class="container">
+      <span class="section-label">Projektit</span>
+      <h1>Tuotekokonaisuudet<br /><em>ja tutkimukset</em></h1>
+      <p>Olen vetänyt useita tuotekokonaisuuksia ideoinnista pilotointiin ja julkaisuun. Lisäksi olen toteuttanut laajoja kenttätutkimuksia kehityksen pohjaksi.</p>
+    </div>
+  </div>
+
+  <!-- OMAT KEHITYSPROJEKTIT -->
+  <section>
+    <div class="container">
+      <span class="section-label">Vetämäni kehitysprojektit</span>
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <h2>Tuotekokonaisuudet,<br /><em>joita olen omistanut</em></h2>
+          <div class="section-divider"></div>
+          <p>Näissä projekteissa olen vastannut liiketoiminnallisesta arvosta, kehitystarpeiden määrittelystä ja toteutuksen ohjaamisesta.</p>
+        </div>
+      </div>
+
+      <div class="row gy-4">
+
+        <!-- MVR -->
+        <div class="col-md-6 col-lg-4" id="mvr">
+          <div class="project-card">
+            <div class="project-card-img">
+              <span class="project-category">Turvallisuus</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-tag">Vastuullinen PM · Julkaistu</span>
+              <h3>MVR-turvallisuusmittauksen uudistus</h3>
+              <p>Täysin uudistettu digitaalinen turvallisuustarkastustyökalu infrarakentamiseen. Läpinäkyvyys, vertailtavuus ja väärinkäytösten esto — ensimmäistä kertaa. Mittaushistoria paljastaa nyt jos mittauksia tehdään pikakelaten tai väärässä paikassa.</p>
+              <div class="project-meta">
+                <span class="project-status status-published">✓ Julkaistu</span>
+                <a href="https://www.buildie.fi/tuote/turvallisuusmittaukset" target="_blank" rel="noopener" class="project-link">
+                  Tuotesivu
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHOTO COMMENTING -->
+        <div class="col-md-6 col-lg-4" id="comments">
+          <div class="project-card">
+            <div class="project-card-img">
+              <span class="project-category">Kommunikaatio</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-tag">PM · Julkaistu</span>
+              <h3>Kuviin kommentointi</h3>
+              <p>@-maininnoin ja push-notifikaatioilla toimiva kommunikaatiotyökalu suoraan valokuviin. Tarkennusten pyytäminen, vaiheiden vahvistaminen ja palautteen antaminen ilman erillistä tehtävänhallintaa — kaikki tallennettu ja helposti löydettävissä.</p>
+              <div class="project-meta">
+                <span class="project-status status-published">✓ Julkaistu</span>
+                <a href="https://www.buildie.fi/tuote/valokuvadokumentointi" target="_blank" rel="noopener" class="project-link">
+                  Tuotesivu
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- BUILDIE AI -->
+        <div class="col-md-6 col-lg-4" id="ai">
+          <div class="project-card">
+            <div class="project-card-img">
+              <span class="project-category">Tekoäly</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-tag">PM · Pilotointi</span>
+              <h3>BuildieAI Beta</h3>
+              <p>Tekoälyominaisuuksien määrittely ja tuominen osaksi tuotetta. AI kategorisoi valokuvia automaattisesti ja kirjaa havaintoja — vähentää inhimillisiä virheitä ja auttaa hallitsemaan suuria materiaalimääriä. Osa laajempaa AI-konseptointityötä.</p>
+              <div class="project-meta">
+                <span class="project-status status-pilot">◑ Pilotointi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PHOTOGRAPHY 2.0 -->
+        <div class="col-md-6 col-lg-4" id="photo20">
+          <div class="project-card">
+            <div class="project-card-img">
+              <span class="project-category">Valokuvaus</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-tag">PM · Pilotointi 2026</span>
+              <h3>Valokuvauksen uudistus 2.0</h3>
+              <p>Täysin uusi kameraflow karttapohjaisena. Sarjakuvausmoodi poistettu — kuvaus käynnistyy suoraan kartalta, jolloin sijaintitarkkuus paranee ja onboarding helpottuu. Johti laajaan kenttätutkimukseen useissa asiakassegmenteissä ennen kehityksen aloitusta.</p>
+              <div class="project-meta">
+                <span class="project-status status-pilot">◑ Pilotointi</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AI REVISIONING -->
+        <div class="col-md-6 col-lg-4" id="revisioning">
+          <div class="project-card">
+            <div class="project-card-img">
+              <span class="project-category">AI · Projektipankki</span>
+            </div>
+            <div class="project-card-body">
+              <span class="project-tag">PM · Kehitykseen valmis</span>
+              <h3>AI Revisioning Tool</h3>
+              <p>Projektipankin tiedostoversioiden automaattinen vertailu tekoälyn avulla. AI tunnistaa muutokset tiedostorevisioiden välillä ja tuottaa yhteenvedon — tekstitiedostoille kirjallinen kuvaus, kuville visuaalinen korostus. Olen määritellyt epicin ja kirjoittanut product specin.</p>
+              <div class="project-meta">
+                <span class="project-status status-dev">→ Ready for dev</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTKIMUKSET -->
+  <section class="section-alt">
+    <div class="container">
+      <span class="section-label">Tutkimukset</span>
+      <div class="row mb-5">
+        <div class="col-lg-7">
+          <h2>Kenttätutkimukset<br /><em>kehityksen pohjana</em></h2>
+          <div class="section-divider"></div>
+          <p>Hyvä tuotekehitys alkaa oikeasta asiakasymmärryksestä. Olen toteuttanut useita tutkimuksia, jotka ovat suoraan vaikuttaneet kehityssuuntaan.</p>
+        </div>
+      </div>
+
+      <div class="row gy-4">
+        <div class="col-lg-6">
+          <div class="research-item">
+            <div class="research-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            </div>
+            <div>
+              <h4>Valokuvauksen kehittämisen study</h4>
+              <p>Laaja kenttätutkimus valokuvauksen nykytilasta. Haastattelut useissa asiakassegmenteissä — valvojat, kunnossapidon työntekijät, asentajat, lupa-asioita hoitavat. Tutkimus johti suoraan Photography 2.0 -projektin käynnistämiseen.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="research-item">
+            <div class="research-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            </div>
+            <div>
+              <h4>Planning Images on Map</h4>
+              <p>Tutkimus suunnitelmakuvien hyödyntämisestä karttakerroksena. Kartoitin asiakastarpeen, jonka pohjalta kehitettiin ominaisuus, joka mahdollistaa ajantasaisen työmaakartan suunnitelmakuvien avulla. Parantaa GPS-sijaintien tarkkuutta ja helpottaa navigointia.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VASTUUALUEET -->
+  <section>
+    <div class="container">
+      <span class="section-label">Vastuualueet</span>
+      <div class="row mb-4">
+        <div class="col-lg-7">
+          <h2>Pitkäaikaiset<br /><em>tuotekokonaisuudet</em></h2>
+          <div class="section-divider"></div>
+          <p>Näiden ominaisuuksien omistajuus on ollut osa rooliani — seuraan käyttöä, tunnistan kehitystarpeita ja varmistan, että ne palvelevat asiakkaita parhaalla mahdollisella tavalla.</p>
+        </div>
+      </div>
+      <div class="row gy-3">
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-3" style="border:1px solid var(--border); border-radius:var(--radius); background:var(--white);">
+            <div class="project-tag mb-2">Ominaisuus</div>
+            <div class="skill-name">Valokuvadokumentointi</div>
+            <p class="skill-desc mt-1">Älykäs mobiilijärjestelmä rakennustyömaan kuvadokumentointiin</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-3" style="border:1px solid var(--border); border-radius:var(--radius); background:var(--white);">
+            <div class="project-tag mb-2">Ominaisuus</div>
+            <div class="skill-name">Turvallisuusmittaukset</div>
+            <p class="skill-desc mt-1">Digitaaliset turvallisuustarkastukset infrarakennustyömaille</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-3" style="border:1px solid var(--border); border-radius:var(--radius); background:var(--white);">
+            <div class="project-tag mb-2">Ominaisuus</div>
+            <div class="skill-name">Raportit</div>
+            <p class="skill-desc mt-1">Automaattiset raportit ja dokumentaation hallinta työmaille</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="p-3" style="border:1px solid var(--border); border-radius:var(--radius); background:var(--white);">
+            <div class="project-tag mb-2">Ominaisuus</div>
+            <div class="skill-name">Projektipankki</div>
+            <p class="skill-desc mt-1">Tiedostojen hallinta ja jakaminen rakennusprojekteissa</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="row align-items-center gy-4">
+        <div class="col-lg-5">
+          <div class="footer-name">Lea Salonen</div>
+          <p>Tuotesuunnittelija / Tuotehallinta · Tampere</p>
+        </div>
+        <div class="col-lg-7 text-lg-end">
+          <div class="footer-links justify-content-lg-end">
+            <a href="about.html">Minusta</a>
+            <a href="skills.html">Osaaminen</a>
+            <a href="projects.html">Projektit</a>
+            <a href="contact.html">Yhteystiedot</a>
+            <a href="https://www.linkedin.com/in/lea-salonen-473432173/" target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
