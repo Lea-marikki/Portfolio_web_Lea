@@ -1,99 +1,147 @@
 /* ===========================
    GLOBAL RESET & VARIABLES
+
+   Tässä yläosassa määritellään koko sivuston
+   yhteiset asetukset: värit, fontit, perusasetukset.
+   Kun haluat vaihtaa esim. korostusvärin, muuta
+   se vain täältä — se päivittyy joka paikkaan.
 =========================== */
+
+/* @import lataa Google Fontsista kaksi fonttia:
+   DM Serif Display (otsikoihin) ja Inter (leipätekstiin).
+   ital@0;1 = sekä suora että kursiivi.
+   wght@300..600 = eri paksuusasteet. */
 @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600&display=swap');
 
+/* :root tarkoittaa koko dokumentin "juurta" (eli html-elementtiä).
+   Täällä määritellään CSS-muuttujat, joita voi käyttää muualla
+   muodossa var(--muuttujan-nimi). */
 :root {
-  --bg:           #FAFAF8;
-  --accent:       #C5A882;
-  --accent-dark:  #A8896A;
-  --accent-light: #F2EDE6;
-  --text:         #1C1C1A;
-  --text-muted:   #6B6B68;
-  --border:       #E5DDD4;
-  --white:        #FFFFFF;
-  --section-alt:  #F5F1EC;
+  /* Värit — koko paletti yhdessä paikassa */
+  --bg:           #FAFAF8;  /* Sivuston pohjaväri (lähes valkoinen, vähän lämmin) */
+  --accent:       #C5A882;  /* Korostusväri — beige/kulta */
+  --accent-dark:  #7A5F42;  /* Tummempi korostus, käytetään teksteihin */
+  --accent-light: #F2EDE6;  /* Vaalea korostus, taustoihin */
+  --text:         #1C1C1A;  /* Pääväri tekstille (lähes musta) */
+  --text-muted:   #6B6B68;  /* Haalennettu tekstiväri (lisätekstit, kuvaukset) */
+  --border:       #E5DDD4;  /* Reunaviivojen väri */
+  --white:        #FFFFFF;  /* Puhdas valkoinen */
+  --section-alt:  #F5F1EC;  /* Vaihtoehtoinen taustaväri osiolle */
 
-  --font-heading: 'DM Serif Display', Georgia, serif;
-  --font-body:    'Inter', sans-serif;
+  /* Fontit */
+  --font-heading: 'DM Serif Display', Georgia, serif;  /* Otsikoihin: serif-fontti, jossa varaversiot jos lataus epäonnistuu */
+  --font-body:    'Inter', sans-serif;                  /* Leipätekstiin: moderni sans-serif */
 
-  --radius:       4px;
-  --transition:   0.3s ease;
+  /* Yleiset asetukset */
+  --radius:       4px;       /* Reunojen pyöristys (kortit, painikkeet) */
+  --transition:   0.3s ease; /* Animaatioiden kesto ja tyyli (esim. hover-efekteissä) */
 }
 
+/* "Universal selector" * tarkoittaa "kaikki elementit".
+   ::before ja ::after ovat näennäiselementtejä joita CSS lisää.
+   Tämä on perusresetti: poistetaan selainten oletukset
+   marginaalista ja paddingsta, ja box-sizing varmistaa
+   että koko elementti mahtuu sille annettuun leveyteen. */
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
+/* scroll-behavior: smooth tekee sivun sisäisistä linkeistä
+   (esim. projects.html#mvr) sulavasti vierittyviä. */
 html {
   scroll-behavior: smooth;
 }
 
+/* Body: koko sivun perusasetukset.
+   display: flex + flex-direction: column + min-height: 100vh
+   yhdessä varmistavat, että footer pysyy aina sivun pohjalla,
+   vaikka sisältöä olisi vähän. */
 body {
   font-family: var(--font-body);
   font-weight: 400;
   font-size: 1rem;
-  line-height: 1.7;
+  line-height: 1.7;            /* Rivinkorkeus = 1,7-kertainen fontin koosta. Antaa ilmavan luettavuuden. */
   color: var(--text);
   background-color: var(--bg);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;            /* Vähintään koko näytön korkuinen */
 }
 
+footer {
+  margin-top: auto;             /* Tämä yhdessä body:n flex-asetusten kanssa työntää footerin alas */
+}
+
+/* Kuville yleisasetus: skaalautuvat fiksusti */
 img {
-  max-width: 100%;
-  height: auto;
-  display: block;
+  max-width: 100%;              /* Ei ylivuotoa */
+  height: auto;                 /* Pitää suhteet */
+  display: block;               /* Poistaa pienen alavälin joka tulee inline-elementistä */
 }
 
+/* Linkit: peritään ympäröivän tekstin väri, ei alleviivausta */
 a {
   color: inherit;
   text-decoration: none;
-  transition: color var(--transition);
+  transition: color var(--transition);  /* Sulava väriliikuttuminen hoverissa */
 }
 
 a:hover {
   color: var(--accent-dark);
 }
 
+/* Listoista pois oletusbulletit */
 ul {
   list-style: none;
 }
 
 /* ===========================
    TYPOGRAPHY
+   Otsikoiden ja tekstien yleinen tyyli.
 =========================== */
 h1, h2, h3, h4 {
   font-family: var(--font-heading);
   font-weight: 400;
-  line-height: 1.15;
+  line-height: 1.15;             /* Tiukempi kuin leipätekstissä — otsikot näyttävät paremmilta */
   color: var(--text);
 }
 
+/* clamp(min, ideaali, max) on responsiivinen kokomäärittely:
+   - min: pienin mahdollinen koko (mobiilissa)
+   - ideaali: skaalautuva koko (vw = % näytön leveydestä)
+   - max: suurin koko (isolla näytöllä)
+   Näin otsikot säätyvät automaattisesti näytön kokoon. */
 h1 { font-size: clamp(2.8rem, 7vw, 5rem); }
 h2 { font-size: clamp(2rem, 4vw, 3rem); }
 h3 { font-size: clamp(1.3rem, 2.5vw, 1.75rem); }
 h4 { font-size: 1.1rem; }
 
+/* Kappaleet: haaleammalla värillä ja rajatulla leveydellä luettavuuden vuoksi */
 p {
   color: var(--text-muted);
-  max-width: 65ch;
+  max-width: 65ch;               /* ch = merkin leveys. ~65 merkkiä per rivi on optimi luettavuudelle. */
 }
 
+/* "Lead"-kappale: isompi ja ilmavampi, esittelyteksteille */
 .lead {
   font-size: 1.15rem;
   line-height: 1.8;
 }
 
+/* Pieni apuluokka: pakottaa tekstille korostusvärin */
 .text-accent {
   color: var(--accent-dark);
 }
 
+/* "Section label": pieni isokirjaiminen otsikko isompien otsikoiden yläpuolella
+   (esim. "Valittuja projekteja" ennen "Mitä olen rakentanut"). */
 .section-label {
   font-family: var(--font-body);
   font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.15em;        /* Iso kirjainväli antaa "luksus"-tunteen */
   text-transform: uppercase;
   color: var(--accent-dark);
   display: block;
@@ -102,23 +150,26 @@ p {
 
 /* ===========================
    NAVIGATION
+   Yläpalkki, joka pysyy ylhäällä rullatessa.
 =========================== */
 .navbar {
   background-color: var(--bg);
   border-bottom: 1px solid var(--border);
   padding: 1.25rem 0;
-  position: sticky;
+  position: sticky;              /* Pysyy ylhäällä kun käyttäjä rullaa alaspäin */
   top: 0;
-  z-index: 1000;
+  z-index: 1000;                 /* Korkea z-index = pysyy muiden elementtien päällä */
 }
 
+/* Logo-teksti vasemmalla */
 .navbar-brand {
   font-family: var(--font-heading);
   font-size: 1.3rem;
-  color: var(--text) !important;
+  color: var(--text) !important; /* !important yliajaa Bootstrapin oletuksen */
   letter-spacing: 0.02em;
 }
 
+/* Navigaatiolinkit */
 .navbar-nav .nav-link {
   font-size: 0.875rem;
   font-weight: 500;
@@ -127,31 +178,36 @@ p {
   color: var(--text-muted) !important;
   padding: 0.25rem 0 !important;
   margin: 0 1.25rem;
-  position: relative;
+  position: relative;            /* Tarvitaan, jotta ::after-elementti voidaan asetella tähän */
   transition: color var(--transition);
 }
 
+/* Linkin alle ilmestyy ohut viiva hoverissa ja aktiivisessa tilassa.
+   ::after on "näennäiselementti": ei ole HTML:ssä, vaan CSS lisää sen. */
 .navbar-nav .nav-link::after {
-  content: '';
+  content: '';                   /* Tyhjä, mutta pakollinen ::after-elementille */
   position: absolute;
   bottom: -2px;
   left: 0;
-  width: 0;
+  width: 0;                      /* Aluksi 0 — viiva ei näy */
   height: 1px;
   background-color: var(--accent);
-  transition: width var(--transition);
+  transition: width var(--transition);  /* Animoi leveyden muutos */
 }
 
+/* Hover- ja aktiivisessa tilassa: tekstin väri muuttuu... */
 .navbar-nav .nav-link:hover,
 .navbar-nav .nav-link.active {
   color: var(--text) !important;
 }
 
+/* ...ja viiva alla ilmestyy täyteen leveyteen */
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
   width: 100%;
 }
 
+/* Hampurilaispainike (mobiili): pois Bootstrapin oletukset */
 .navbar-toggler {
   border: none;
   padding: 0;
@@ -159,12 +215,15 @@ p {
 }
 
 .navbar-toggler:focus {
-  box-shadow: none;
+  box-shadow: none;              /* Pois Bootstrapin sininen "focus"-renkaa */
 }
 
 /* ===========================
    BUTTONS
+   Kaksi tyyliä: täyttöväri (primary) ja reuna (outline).
 =========================== */
+
+/* Primary: tumma tausta, vaalea teksti — vahva CTA */
 .btn-primary-custom {
   display: inline-block;
   padding: 0.85rem 2.2rem;
@@ -185,6 +244,7 @@ p {
   color: var(--white) !important;
 }
 
+/* Outline: läpinäkyvä tausta, vain reuna — sekundaarinen toiminto */
 .btn-outline-custom {
   display: inline-block;
   padding: 0.85rem 2.2rem;
@@ -206,15 +266,19 @@ p {
 
 /* ===========================
    SECTIONS
+   Yleiset asetukset osioille (<section>-elementit).
 =========================== */
 section {
-  padding: 5rem 0;
+  padding: 5rem 0;               /* Iso ylä- ja alaväli kaikkien osioiden välillä */
 }
 
+/* Vaihtoehtoinen tausta tietyille osioille (esim. "section-alt") —
+   antaa visuaalisen rytmin kun rinnakkain on vuoroin tämä ja oletustausta */
 .section-alt {
   background-color: var(--section-alt);
 }
 
+/* Pieni vaakaviiva otsikoiden alla — koristeellinen erotin */
 .section-divider {
   width: 40px;
   height: 1px;
@@ -224,16 +288,19 @@ section {
 
 /* ===========================
    HERO (INDEX)
+   Etusivun iso esittelyalue.
 =========================== */
 .hero {
-  min-height: 92vh;
+  min-height: 92vh;              /* 92% näytön korkeudesta — täyttää lähes koko ruudun */
   display: flex;
-  align-items: center;
+  align-items: center;            /* Sisältö pystysuunnassa keskelle */
   padding: 5rem 0;
-  position: relative;
-  overflow: hidden;
+  position: relative;             /* Tarvitaan ::before-elementtiä varten */
+  overflow: hidden;               /* Estää ::before-elementin näkymisen reunan yli */
 }
 
+/* Hero-osion oikea reuna: vaalea värialue taustalla.
+   Tämä luodaan ::before-näennäiselementillä. */
 .hero::before {
   content: '';
   position: absolute;
@@ -242,14 +309,16 @@ section {
   width: 38%;
   height: 100%;
   background-color: var(--accent-light);
-  z-index: 0;
+  z-index: 0;                    /* Taustalla */
 }
 
+/* Container nostetaan ::before-tason yläpuolelle, jotta sisältö näkyy */
 .hero .container {
   position: relative;
   z-index: 1;
 }
 
+/* Hero-otsikon yläpuolinen pieni tagi-teksti */
 .hero-subtitle {
   font-size: 0.8rem;
   font-weight: 600;
@@ -264,6 +333,7 @@ section {
   margin-bottom: 1.5rem;
 }
 
+/* Hero-otsikon kursivoitu osa (sukunimi "Salonen") saa eri värin */
 .hero h1 em {
   font-style: italic;
   color: var(--accent-dark);
@@ -274,26 +344,36 @@ section {
   margin-bottom: 2.5rem;
 }
 
+/* CTA-painikkeiden rivi */
 .hero-cta {
   display: flex;
   gap: 1rem;
   flex-wrap: wrap;
 }
 
+/* Kuva-alueen kehys hero-osiossa */
 .hero-image-wrapper {
   position: relative;
   height: 100%;
   min-height: 480px;
 }
 
-.hero-image-wrapper img,
-.hero-image-placeholder {
+.hero-image-wrapper img {
   width: 100%;
-  height: 520px;
-  object-fit: cover;
+  height: auto;                  /* Korkeus määräytyy kuvan oman kuvasuhteen mukaan, ei rajata. */
+  display: block;
   border-radius: var(--radius);
 }
 
+/* Placeholder-laatikolle (käytetään kun kuvaa ei ole vielä) säilytetään
+   kiinteä korkeus, koska sillä ei ole omaa kuvasuhdetta. */
+.hero-image-placeholder {
+  width: 100%;
+  height: 520px;
+  border-radius: var(--radius);
+}
+
+/* Tilanvaraaja kun kuvaa ei vielä ole — harmaa laatikko */
 .hero-image-placeholder {
   background-color: var(--border);
   display: flex;
@@ -304,7 +384,7 @@ section {
   letter-spacing: 0.05em;
 }
 
-/* EN-kielinen tiivistelmä */
+/* Englanninkielinen tiivistelmä — vaalea laatikko jossa vasen reuna on korostusvärinen */
 .en-summary {
   background-color: var(--white);
   border-left: 3px solid var(--accent);
@@ -326,24 +406,26 @@ section {
 .en-summary p {
   font-size: 0.95rem;
   color: var(--text-muted);
-  max-width: none;
+  max-width: none;               /* Yliajaa yleinen p-leveysrajoitus */
 }
 
-/* Etusivun nostot */
+/* Etusivun projektinostokortit ("Mitä olen rakentanut") */
 .highlight-card {
   padding: 2.5rem 2rem;
   background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  height: 100%;
+  height: 100%;                  /* Täyttää sarakkeen korkeuden — kortit pysyvät samanmittaisina */
   transition: border-color var(--transition), transform var(--transition);
 }
 
+/* Hover-efekti: reuna muuttuu korostusväriksi ja kortti nousee 3px ylös */
 .highlight-card:hover {
   border-color: var(--accent);
   transform: translateY(-3px);
 }
 
+/* Iso numero kortin yläosassa (01, 02, 03) */
 .highlight-card .card-num {
   font-family: var(--font-heading);
   font-size: 2.5rem;
@@ -363,7 +445,10 @@ section {
 
 /* ===========================
    ABOUT PAGE
+   Minusta-sivun erityistyylit.
 =========================== */
+
+/* Suuri henkilökuva (jos käytössä) */
 .about-photo {
   width: 100%;
   height: 500px;
@@ -371,6 +456,16 @@ section {
   border-radius: var(--radius);
 }
 
+/* Kuvituskuva minusta-sivulla */
+.about-illustration {
+  width: 100%;
+  max-width: 340px;
+  display: block;
+  margin: 0 auto;
+  mix-blend-mode: multiply;      /* Sulautuu taustaan — saa kuvan tuntumaan osalta sivua */
+}
+
+/* Tilanvaraaja jos kuvaa ei ole */
 .about-photo-placeholder {
   width: 100%;
   height: 500px;
@@ -383,11 +478,13 @@ section {
   font-size: 0.875rem;
 }
 
+/* Aikajana-rakenne urapolulle */
 .timeline {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.5rem;          /* Tilaa pystyviivalle vasemmalla */
 }
 
+/* Pystyviiva, joka kulkee kaikkien aikajanan kohtien läpi */
 .timeline::before {
   content: '';
   position: absolute;
@@ -400,13 +497,14 @@ section {
 
 .timeline-item {
   position: relative;
-  padding-bottom: 2.5rem;
+  padding-bottom: 2.5rem;        /* Väli aikajanan kohtien välillä */
 }
 
 .timeline-item:last-child {
-  padding-bottom: 0;
+  padding-bottom: 0;             /* Viimeisellä ei alavälejä */
 }
 
+/* Pyöreä piste pystyviivan kohdalla — yksi per aikajanan kohta */
 .timeline-item::before {
   content: '';
   position: absolute;
@@ -414,11 +512,12 @@ section {
   top: 8px;
   width: 8px;
   height: 8px;
-  border-radius: 50%;
+  border-radius: 50%;            /* 50% = täydellinen ympyrä */
   background-color: var(--accent);
-  transform: translateX(-3.5px);
+  transform: translateX(-3.5px); /* Hieno-säätö: keskittää piste viivan kanssa */
 }
 
+/* Vuosiluku aikajanassa */
 .timeline-year {
   font-size: 0.75rem;
   font-weight: 600;
@@ -447,6 +546,7 @@ section {
   max-width: 55ch;
 }
 
+/* Lainaus-laatikko (CEO:n lainaus) */
 .quote-block {
   background-color: var(--accent-light);
   border-radius: var(--radius);
@@ -454,6 +554,7 @@ section {
   position: relative;
 }
 
+/* Iso lainausmerkki vasemmassa yläkulmassa */
 .quote-mark {
   font-family: var(--font-heading);
   font-size: 5rem;
@@ -464,8 +565,8 @@ section {
 }
 
 .quote-text {
-  font-family: var(--font-heading);
-  font-size: 1.2rem;
+  font-family: var(--font-body);
+  font-size: 1.15rem;
   font-style: italic;
   line-height: 1.7;
   color: var(--text);
@@ -483,11 +584,15 @@ section {
 
 /* ===========================
    SKILLS PAGE
+   Taidot ja osaaminen — sekä koulutus.
 =========================== */
+
+/* Ryhmäotsikon "Ydinosaaminen", "Muut taidot" jne. ympärillä oleva luokka */
 .skill-group {
   margin-bottom: 3rem;
 }
 
+/* Ryhmäotsikko — iso kirjainväli, alle viiva */
 .skill-group-title {
   font-size: 0.75rem;
   font-weight: 600;
@@ -499,6 +604,7 @@ section {
   margin-bottom: 1.5rem;
 }
 
+/* Yksittäinen taito: piste vasemmalla + nimi/kuvaus oikealla, alaviivalla */
 .skill-item {
   display: flex;
   align-items: flex-start;
@@ -508,16 +614,17 @@ section {
 }
 
 .skill-item:last-child {
-  border-bottom: none;
+  border-bottom: none;           /* Viimeiseltä pois alaviiva */
 }
 
+/* Pieni täplä taidon edessä */
 .skill-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
   background-color: var(--accent);
-  flex-shrink: 0;
-  margin-top: 0.6rem;
+  flex-shrink: 0;                /* Ei mene pieneksi vaikka tilaa olisi vähän */
+  margin-top: 0.6rem;             /* Tasaa pisteen tekstin ensimmäisen rivin kanssa */
 }
 
 .skill-name {
@@ -534,6 +641,7 @@ section {
   max-width: none;
 }
 
+/* Kielitaito-laatat — pyöreäreunaiset "badget" */
 .lang-badge {
   display: inline-flex;
   align-items: center;
@@ -541,7 +649,7 @@ section {
   padding: 0.6rem 1.2rem;
   background-color: var(--white);
   border: 1px solid var(--border);
-  border-radius: 100px;
+  border-radius: 100px;          /* Iso radius = täysin pyöreät reunat */
   font-size: 0.875rem;
   font-weight: 500;
   margin: 0.35rem;
@@ -554,13 +662,16 @@ section {
 
 /* ===========================
    PROJECTS PAGE
+   Projektikorttien tyylit.
 =========================== */
+
+/* Yksittäinen projektikortti — kuva ylhäällä, teksti alapuolella */
 .project-card {
   background-color: var(--white);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  overflow: hidden;
-  height: 100%;
+  overflow: hidden;              /* Leikkaa pyöristetyn reunan ylivuotavat osat */
+  height: 100%;                  /* Tasaa kortit samanmittaisiksi */
   display: flex;
   flex-direction: column;
   transition: border-color var(--transition), transform var(--transition);
@@ -568,9 +679,10 @@ section {
 
 .project-card:hover {
   border-color: var(--accent);
-  transform: translateY(-4px);
+  transform: translateY(-4px);   /* Kortti nousee hovissa */
 }
 
+/* Kortin yläosa — kuva-alue (tällä hetkellä vain kategoria-laatta) */
 .project-card-img {
   height: 200px;
   background-color: var(--accent-light);
@@ -582,6 +694,7 @@ section {
   overflow: hidden;
 }
 
+/* Jos sinne lisätään myöhemmin oikea kuva, se täyttää koko alueen */
 .project-card-img img {
   width: 100%;
   height: 100%;
@@ -591,6 +704,7 @@ section {
   left: 0;
 }
 
+/* Kategoria-laatta ("Turvallisuus", "Tekoäly" jne.) */
 .project-card-img .project-category {
   position: relative;
   z-index: 1;
@@ -605,13 +719,15 @@ section {
   border: 1px solid var(--border);
 }
 
+/* Kortin alaosa — teksti */
 .project-card-body {
   padding: 2rem;
-  flex: 1;
+  flex: 1;                       /* Vie kaiken jäljellä olevan tilan = kortit yhtä korkeita */
   display: flex;
   flex-direction: column;
 }
 
+/* Pieni "tag" otsikon yläpuolella ("PM · Julkaistu") */
 .project-tag {
   display: inline-block;
   font-size: 0.7rem;
@@ -629,29 +745,10 @@ section {
 
 .project-card-body p {
   font-size: 0.9rem;
-  flex: 1;
+  flex: 1;                       /* Vie tilan, työntää alarivin alas */
 }
 
-.project-meta {
-  margin-top: 1.5rem;
-  padding-top: 1.25rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.project-status {
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.status-published { color: #4A7C59; }
-.status-pilot     { color: #C5A882; }
-.status-dev       { color: #6B6B68; }
-
+/* "Lue lisää" -linkki nuolen kanssa (käytössä etusivun nostokorteissa) */
 .project-link {
   font-size: 0.8rem;
   font-weight: 600;
@@ -672,11 +769,12 @@ section {
   transition: transform var(--transition);
 }
 
+/* Hovissa nuoli liikahtaa hieman oikealle — pieni mutta hauska detail */
 .project-link:hover svg {
   transform: translateX(3px);
 }
 
-/* Tutkimukset-osio */
+/* Tutkimukset-osion kortit (eri tyyli kuin projektikortit) */
 .research-item {
   padding: 2rem;
   background-color: var(--white);
@@ -692,6 +790,7 @@ section {
   border-color: var(--accent);
 }
 
+/* Pyöreä ikoni vasemmalla puolella tutkimuskorttia */
 .research-icon {
   width: 40px;
   height: 40px;
@@ -718,7 +817,56 @@ section {
 
 /* ===========================
    CONTACT PAGE
+   Yhteystiedot-sivun kortit ja lomakekentät
+   (lomaketta ei vielä käytetä, mutta tyylit ovat valmiina).
 =========================== */
+
+/* Yhteystietokortti — pystysuunnassa keskitetty sisältö */
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1.5rem;
+  min-height: 180px;
+  background: var(--accent-light);
+  border-radius: var(--radius);
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text);
+  transition: background 0.2s;
+}
+
+/* Klikattava kortti tummenee hovissa */
+.contact-card--link:hover {
+  background: #ebe3d8;
+}
+
+/* Iso ikoni kortin yläosassa */
+.contact-icon {
+  width: 4rem;
+  height: 4rem;
+  color: var(--accent-dark);
+}
+
+.contact-card-label {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+}
+
+/* Sähköposti / linkki / sijainti -teksti — word-break sallii pitkän osoitteen taittumisen */
+.contact-card-value {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  word-break: break-all;
+  font-weight: 400;
+}
+
+/* Vaihtoehtoinen vaakasuora yhteystietorivi (ei tällä hetkellä käytössä HTML:ssä) */
 .contact-info-item {
   display: flex;
   align-items: center;
@@ -745,6 +893,7 @@ section {
   color: var(--text);
 }
 
+/* Lomakkeen tyylit (varalla — lomaketta ei tällä hetkellä ole HTML:ssä) */
 .form-group {
   margin-bottom: 1.5rem;
 }
@@ -769,11 +918,11 @@ section {
   font-size: 0.95rem;
   color: var(--text);
   transition: border-color var(--transition);
-  outline: none;
+  outline: none;                 /* Pois selaimen oletus-fokusrengas */
 }
 
 .form-control:focus {
-  border-color: var(--accent);
+  border-color: var(--accent);   /* Reuna värittyy kun käyttäjä klikkaa kenttään */
 }
 
 .form-control::placeholder {
@@ -781,12 +930,13 @@ section {
 }
 
 textarea.form-control {
-  resize: vertical;
+  resize: vertical;              /* Käyttäjä voi venyttää tekstialuetta vain pystysuunnassa */
   min-height: 140px;
 }
 
 /* ===========================
    FOOTER
+   Tumma alapalkki sivun alaosassa.
 =========================== */
 footer {
   background-color: var(--text);
@@ -801,6 +951,8 @@ footer .footer-name {
   margin-bottom: 0.5rem;
 }
 
+/* rgba = punainen, vihreä, sininen, läpinäkyvyys.
+   0.5 = 50% läpinäkyvä — antaa hennon tekstiä vasten tummaa taustaa */
 footer p {
   color: rgba(255,255,255,0.5);
   font-size: 0.875rem;
@@ -810,7 +962,7 @@ footer p {
 footer .footer-links {
   display: flex;
   gap: 2rem;
-  flex-wrap: wrap;
+  flex-wrap: wrap;               /* Linkit menevät uudelle riville jos eivät mahdu */
 }
 
 footer .footer-links a {
@@ -823,11 +975,13 @@ footer .footer-links a {
 }
 
 footer .footer-links a:hover {
-  color: var(--accent);
+  color: var(--accent);          /* Hovissa korostusväriä — pieni "elämä" tummalla pohjalla */
 }
 
 /* ===========================
    PAGE HERO (inner pages)
+   Pienempi otsikkoalue about-, projects- ja contact-sivuille.
+   (Iso "hero" oli vain etusivulle.)
 =========================== */
 .page-hero {
   padding: 5rem 0 4rem;
@@ -845,8 +999,69 @@ footer .footer-links a:hover {
 }
 
 /* ===========================
-   RESPONSIVE
+   ROLE PATH (index)
+   Etusivun lyhyt urapolku-kaavio: vuosi → vuosi → vuosi → vuosi.
 =========================== */
+.role-path {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;               /* Roolit menevät uudelle riville jos eivät mahdu */
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.role-step {
+  display: flex;
+  flex-direction: column;        /* Vuosi yläpuolella, titteli alapuolella */
+  gap: 0.2rem;
+}
+
+.role-year {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+}
+
+.role-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text);
+}
+
+/* Nykyinen rooli (--current) saa korostusvärin ja paksumman fontin */
+.role-step--current .role-title {
+  color: var(--accent-dark);
+  font-weight: 600;
+}
+
+/* Nuoli roolien välissä */
+.role-arrow {
+  color: var(--border);
+  font-size: 1.2rem;
+  line-height: 1;
+  padding-bottom: 0.2rem;
+  align-self: flex-end;
+}
+
+/* Mobiilissa nuolet piilotetaan ja roolien väliä levennetään
+   — nuolet näyttäisivät oudoilta jos kaikki menevät peräkkäin pystysuunnassa. */
+@media (max-width: 576px) {
+  .role-arrow { display: none; }
+  .role-path  { gap: 1rem; }
+}
+
+/* ===========================
+   RESPONSIVE
+   Säännöt jotka koskevat eri näyttöleveyksiä.
+
+   @media-säännöt aktivoituvat kun ehto täyttyy.
+   max-width: 991px = "kun näyttö on enintään 991 pikseliä leveä"
+   eli tabletti tai pienempi.
+=========================== */
+
+/* Tabletti ja pienemmät: hero-osion oikea värialue piilotetaan
+   ja kuva siirretään tekstin alapuolelle */
 @media (max-width: 991px) {
   .hero::before {
     display: none;
@@ -855,14 +1070,26 @@ footer .footer-links a:hover {
     margin-top: 3rem;
     min-height: auto;
   }
+  /* Mobiilissa kuva näkyy luontaisessa kuvasuhteessaan, max-korkeus rajaa
+     ettei se jätä sivua liian pitkäksi. */
+  .hero-image-wrapper img {
+    max-height: 520px;
+    object-fit: cover;
+    object-position: top center;
+  }
+  .hero-image-placeholder {
+    height: 420px;
+  }
   section {
-    padding: 4rem 0;
+    padding: 4rem 0;             /* Pienempi padding mobiilissa = tiiviimpi näyttö */
   }
 }
 
+/* Mobiili: navigaatiolinkit pinotaan päällekkäin
+   ja painikkeet venytetään täyteen leveyteen */
 @media (max-width: 768px) {
   .navbar-nav .nav-link {
-    margin: 0.25rem 0;
+    margin: 0.25rem 0;            /* Pystysuunnan välit, ei vaakasuunnan */
   }
   .hero-cta {
     flex-direction: column;
@@ -874,7 +1101,7 @@ footer .footer-links a:hover {
     text-align: center;
   }
   .quote-block {
-    padding: 2rem 1.5rem;
+    padding: 2rem 1.5rem;         /* Pienempi padding mobiilissa */
   }
   .en-summary {
     padding: 1.5rem;

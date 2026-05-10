@@ -4,7 +4,9 @@
       "WebFetch(domain:www.buildie.fi)",
       "WebFetch(domain:buildie.atlassian.net)",
       "mcp__d227216e-324a-4a7d-9b6d-feaad16f4be8__getConfluencePage",
-      "mcp__d227216e-324a-4a7d-9b6d-feaad16f4be8__getJiraIssue"
+      "mcp__d227216e-324a-4a7d-9b6d-feaad16f4be8__getJiraIssue",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(npx --version)"
     ]
   }
 }

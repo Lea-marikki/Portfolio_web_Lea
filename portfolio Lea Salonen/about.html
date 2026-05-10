@@ -1,16 +1,22 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
+  <!-- HEAD-osion tarkemmat selitykset löytyvät index.html-tiedostosta. -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Lea Salonen — Tietoa minusta. Tarina, ura ja arvot." />
+  <!-- Tämän sivun oma kuvaus hakukoneille. -->
   <title>Minusta — Lea Salonen</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
-  <!-- NAV -->
+  <!-- ============================================ -->
+  <!-- NAV: Sama navigaatio kuin index.html:ssä,    -->
+  <!-- mutta tällä sivulla "Minusta"-linkki saa     -->
+  <!-- .active-luokan.                              -->
+  <!-- ============================================ -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="index.html">Lea Salonen</a>
@@ -23,7 +29,7 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Etusivu</a></li>
           <li class="nav-item"><a class="nav-link active" href="about.html">Minusta</a></li>
-          <li class="nav-item"><a class="nav-link" href="skills.html">Osaaminen</a></li>
+          <!-- ↑ Aktiivinen linkki tällä sivulla -->
           <li class="nav-item"><a class="nav-link" href="projects.html">Projektit</a></li>
           <li class="nav-item"><a class="nav-link" href="contact.html">Yhteystiedot</a></li>
         </ul>
@@ -31,81 +37,87 @@
     </div>
   </nav>
 
-  <!-- PAGE HERO -->
-  <div class="page-hero">
+  <!-- ============================================ -->
+  <!-- INTRO: Esittelyteksti + kuvitus              -->
+  <!-- Käytetään inline-style padding, koska tällä  -->
+  <!-- sivulla halutaan eri yläväli kuin section-   -->
+  <!-- luokan oletus 5rem.                          -->
+  <!-- ============================================ -->
+  <section style="padding: 4rem 0 3rem;">
     <div class="container">
-      <span class="section-label">Tietoa minusta</span>
-      <h1>Tarina teknisestä<br /><em>tuesta tuotepäälliköksi</em></h1>
-      <p>Kuusi vuotta startup-ympäristössä on muovannut minusta käytännönläheisen tuotehallinnan ammattilaisen, joka ymmärtää sekä asiakkaan arjen että liiketoiminnan logiikan.</p>
-    </div>
-  </div>
-
-  <!-- ESITTELY + KUVA -->
-  <section>
-    <div class="container">
-      <div class="row align-items-start gy-5">
-        <div class="col-lg-5">
-          <div class="about-photo-placeholder">
-            Kuva tulossa
-          </div>
+      <div class="row align-items-center gy-5">
+        <div class="col-lg-4">
+          <!-- Kuvasarake: 4/12 leveydestä -->
+          <img src="images/lea-illustration.png" alt="Lea Salonen — kuvitus" class="about-illustration" />
+          <!-- alt-teksti on tärkeä saavutettavuudelle ja SEO:lle: kuvaa mitä kuvassa on, kun kuva ei näy. -->
         </div>
-        <div class="col-lg-6 offset-lg-1">
-          <span class="section-label">Kuka olen</span>
-          <h2>Lea Salonen</h2>
-          <p style="font-size:0.875rem; color:var(--accent-dark); letter-spacing:0.08em; text-transform:uppercase; font-weight:600; margin-bottom:1.5rem;">Tuotesuunnittelija / Tuotehallinta · Tampere</p>
+        <div class="col-lg-7 offset-lg-1">
+          <!-- Tekstisarake: 7/12 + 1 sarakkeen offset = jättää tilaa kuvan ja tekstin väliin. -->
+          <span class="section-label">Tietoa minusta</span>
+          <h1 style="font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 0.5rem;">Lea Salonen</h1>
+          <!-- clamp(min, ideal, max) on responsiivinen koko: pienin 2rem, ideaali 4% leveydestä, max 2.8rem. -->
+
+          <p style="font-size:0.8rem; color:var(--accent-dark); letter-spacing:0.1em; text-transform:uppercase; font-weight:600; margin-bottom:1.5rem;">Tuotesuunnittelija · Buildie Oy · Tampere</p>
+          <!-- Inline-style käytetty tähän yhteen kappaleeseen pienen tilan takia. -->
+
           <div class="section-divider"></div>
-          <p class="lead mb-4">Olen tuotehallinnan ammattilainen, joka rakentaa digitaalisia tuotteita liiketoiminnan, teknologian ja käyttäjätarpeiden rajapinnassa.</p>
-          <p class="mb-4">Lähdin urani alussa mukaan startup-ympäristöön Buildielle, jossa olen kasvanut teknisestä tuesta tuotekokonaisuuksien omistajaksi. Tämä on muovannut työskentelytapani vahvan käytännönläheiseksi: ymmärrän asiakastyön realiteetit ja sen, miten tuotteita rakennetaan pitkäjänteisesti tukemaan liiketoimintaa ja strategiaa.</p>
-          <p class="mb-4">Nykyisessä roolissani vastaan omien tuotekokonaisuuksieni kehittämisestä ideoinnista käyttöön asti. Tutkin ominaisuuksien käyttöä, määrittelen arvolupauksen, varmistan kilpailukyvyn ja ohjaan kehitystä yhteistyössä teknisen Product Ownerin kanssa.</p>
-          <p>Hyödynnän aktiivisesti tekoälyratkaisuja erityisesti prototyyppien rakentamisessa — tämä on nopeuttanut ideointia ja kehityksen alkuvaihetta merkittävästi.</p>
-          <div class="mt-4 d-flex gap-3 flex-wrap">
-            <a href="projects.html" class="btn-primary-custom">Katso projektit</a>
-            <a href="contact.html" class="btn-outline-custom">Ota yhteyttä</a>
-          </div>
+          <!-- Pieni vaakaviiva osioiden välissä. CSS määrittelee sen 40px leveäksi accent-väriseksi. -->
+
+          <p class="lead mb-3">Olen kasvanut Buildiella tukihenkilöstä tuotehallintaan kuuden vuoden aikana, ja aloittanut kahdesti tiimin ensimmäisenä työntekijänä. Tuotepalveluissa olin rakentamassa toimintamalleja tiimin kasvaessa. Tuotehallintaan siirtyessäni työskentelin yksin toimitusjohtajan alaisuudessa, kunnes osoitin tarpeen omalle tiimille. Tiimi rakennettiin nykyiseen kolmen hengen muotoonsa.</p>
+          <p class="lead mb-3">Yritys on samaan aikaan kasvanut kuudesta työntekijästä yli 30 hengen organisaatioksi. Tukityö, koulutus ja käyttöönotot antavat pohjan, jolla nojaan tuotekehityksen päätöksissä tänään. Seuraava luonteva askel on tuotepäällikön rooli.</p>
+          <p class="lead">Työn ulkopuolella aikani vievät toimistokoira Edi, luonnossa haahuilu sekä podcastit ja äänikirjat.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- URAPOLKU -->
+  <!-- ============================================ -->
+  <!-- URAPOLKU: Yksityiskohtainen aikajana         -->
+  <!-- (etusivulla on vain lyhyt versio)            -->
+  <!-- section-alt = vaalea taustaväri              -->
+  <!-- ============================================ -->
   <section class="section-alt">
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-5 mb-lg-0">
+          <!-- Vasen sarake: otsikko ja johdanto. mb-5 mb-lg-0 = väli alle mobiilissa, ei isoilla. -->
           <span class="section-label">Urapolku</span>
           <h2>Kuusi vuotta,<br /><em>neljä roolia</em></h2>
           <div class="section-divider"></div>
-          <p>Buildie Oy:llä kulkemani matka kertoo siitä, miten proaktiivisuus, asiakasymmärrys ja halu ottaa lisää vastuuta vievät eteenpäin.</p>
+          <p>Buildie on rakennusalan SaaS-yritys, joka on kasvanut urani aikana 6 työntekijän startupista yli 30 hengen organisaatioksi (tuotekehityksessä 15 henkeä). Olin Tuotepalvelut-tiimin ensimmäinen rekrytoitu työntekijä ja Tuotehallinnan ainoa työntekijä ennen tiimin laajentumista. Molempien tiimien työtavat ovat rakentuneet kanssani.</p>
         </div>
+
         <div class="col-lg-7 offset-lg-1">
+          <!-- Oikea sarake: itse aikajana. -->
           <div class="timeline">
+            <!-- timeline-luokka piirtää CSS:llä pystyviivan vasempaan reunaan + pisteet jokaiselle kohdalle. -->
 
             <div class="timeline-item">
               <span class="timeline-year">2024 — tähän päivään</span>
               <div class="timeline-role">Product Designer</div>
-              <div class="timeline-company">Buildie Oy · Product Management</div>
-              <p class="timeline-desc">Olen keskeisessä roolissa tuotehallinnan rakentamisessa yritykseen. Vastaan omien tuotekokonaisuuksien liiketoiminnallisesta arvosta ja kehitystarpeiden määrittelystä. Osallistun roadmap-työhön ja kehityksen priorisointiin liiketoimintahyödyn näkökulmasta koko yrityksen tasolla.</p>
+              <div class="timeline-company">Buildie Oy · Tuotehallinta</div>
+              <p class="timeline-desc">Siirryin Tuotehallintaan ensimmäisenä työntekijänä toimitusjohtajan alaisuudessa. Työn pohjalta tiimi kasvoi nykyiseen kolmeen henkilöön (lisäkseni kollega ja tuotejohtaja). Vastaan tuotekokonaisuuksien liiketoiminta-arvosta ja kehityksestä ideasta toteutukseen, osallistun roadmap-työhön ja priorisointiin yrityksen tasolla. Laajemmassa tuotekehityksessä on 14 kollegaa — yhteistyö kehittäjien, suunnittelijoiden ja teknisen Product Ownerin kanssa on päivittäistä.</p>
             </div>
 
             <div class="timeline-item">
               <span class="timeline-year">2023 — 2024</span>
               <div class="timeline-role">Service Designer</div>
-              <div class="timeline-company">Buildie Oy</div>
-              <p class="timeline-desc">Tunnistin asiakastutkimukseen perustuen kasvumahdollisuuksia ja uusia tuotekehitystarpeita. Konseptoin ratkaisuja ja muodostin niistä toteuttamiskelpoisia kehityspaketteja.</p>
+              <div class="timeline-company">Buildie Oy · Tuotepalvelut / Tuotehallinta</div>
+              <p class="timeline-desc">Rooli toimi siltana asiakasrajapinnan ja tuotekehityksen välillä. Tunnistin asiakastutkimukseen perustuen kasvumahdollisuuksia ja uusia tuotekehitystarpeita, konseptoin ratkaisuja ja muodostin niistä toteuttamiskelpoisia kehityspaketteja.</p>
             </div>
 
             <div class="timeline-item">
               <span class="timeline-year">2021 — 2023</span>
               <div class="timeline-role">Product Specialist</div>
-              <div class="timeline-company">Buildie Oy</div>
+              <div class="timeline-company">Buildie Oy · Tuotepalvelut</div>
               <p class="timeline-desc">Vastasin asiakkuuksien käytön kehittämisestä ja organisaatioiden muutosjohtamisesta. Kehitin toimialan käytäntöjä ja määrittelin vaatimuksia käyttöympäristöille.</p>
             </div>
 
             <div class="timeline-item">
               <span class="timeline-year">2020 — 2021</span>
               <div class="timeline-role">Technical Support Coordinator</div>
-              <div class="timeline-company">Buildie Oy</div>
-              <p class="timeline-desc">Vastasin teknisestä tuesta ja sen prosessien kehittämisestä. Koulutin asiakkaita ja vastasin käyttöönottojen määrittelystä.</p>
+              <div class="timeline-company">Buildie Oy · Tuotepalvelut</div>
+              <p class="timeline-desc">Tuotepalvelut-tiimin ensimmäinen rekrytoitu työntekijä. Vastasin teknisestä tuesta ja sen prosessien kehittämisestä alusta asti. Koulutin asiakkaita ja vastasin käyttöönottojen määrittelystä. Toimintamalleja rakennettiin tiimin kasvaessa.</p>
             </div>
 
           </div>
@@ -114,15 +126,19 @@
     </div>
   </section>
 
-  <!-- CEO LAINAUS -->
+  <!-- ============================================ -->
+  <!-- CEO LAINAUS: Toimitusjohtajan suositus       -->
+  <!-- justify-content-center keskittää sarakkeen.  -->
+  <!-- ============================================ -->
   <section>
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-lg-8">
           <span class="section-label">Tunnustus</span>
           <div class="quote-block">
+            <!-- quote-block: vaalea tausta + iso lainausmerkki ylhäällä (CSS:ssä). -->
             <span class="quote-mark">"</span>
-            <p class="quote-text">Kaikki ovat antaneet loistavaa palautetta upeasta projektin johtamisesta, asiakastarpeen täsmällisestä ymmärryksestä ja minä voin keskittyä vientiin, kun tiedän tuotevision etenevän oikeaan suuntaan.</p>
+            <p class="quote-text">Kaikki ovat antaneet loistavaa palautetta upeasta projektin johtamisesta ja asiakastarpeen täsmällisestä ymmärryksestä.</p>
             <span class="quote-author">Taneli Ristmeri — CEO & Co-founder, Buildie Oy · Suomen Nuori Yrittäjä 2024</span>
           </div>
         </div>
@@ -130,7 +146,10 @@
     </div>
   </section>
 
-  <!-- KOULUTUS -->
+  <!-- ============================================ -->
+  <!-- KOULUTUS                                     -->
+  <!-- Sama 4+1+7 sarakerakenne kuin urapolussa.    -->
+  <!-- ============================================ -->
   <section class="section-alt">
     <div class="container">
       <div class="row">
@@ -139,6 +158,7 @@
           <h2>Opinnot ja<br /><em>kehittyminen</em></h2>
         </div>
         <div class="col-lg-7 offset-lg-1">
+          <!-- skill-item-luokka: pieni täplä + nimi + kuvaus, alaviivalla erotettuna. -->
           <div class="skill-item">
             <div class="skill-dot"></div>
             <div>
@@ -165,18 +185,157 @@
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- ============================================ -->
+  <!-- OSAAMINEN: Taidot kahdessa sarakkeessa       -->
+  <!-- Vasen: ydinosaaminen (5 kpl)                 -->
+  <!-- Oikea: muut taidot + kielitaito              -->
+  <!-- ============================================ -->
+  <section>
+    <div class="container">
+      <span class="section-label">Osaaminen</span>
+      <h2>Taidot ja ydinosaaminen</h2>
+      <div class="section-divider"></div>
+
+      <div class="row gy-5 mt-4">
+
+        <!-- Ydinosaaminen-sarake -->
+        <div class="col-lg-6">
+          <div class="skill-group">
+            <!-- skill-group ympäröi ryhmää, otsikolla ja alaviivalla. -->
+            <div class="skill-group-title">Ydinosaaminen</div>
+
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <div class="skill-name">Tuotehallinta ja roadmap-työ</div>
+                <div class="skill-desc">Kehityksen priorisointi liiketoimintahyödyn ja asiakasarvon perusteella, roadmap-suunnittelu koko tuotteen tasolla.</div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <div class="skill-name">Vastuu tuotekokonaisuuksista</div>
+                <div class="skill-desc">Vastaan tuotekokonaisuuksien liiketoiminta-arvosta ja kehitystarpeiden määrittelystä ideasta toteutukseen.</div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <div class="skill-name">Asiakastutkimus ja konseptointi</div>
+                <div class="skill-desc">Kenttähaastattelut ja käyttäjätutkimus eri segmenteissä rakennusalalla. Ratkaisujen konseptointi tutkimuspohjalta toteuttamiskelpoisiksi kehityspaketeiksi.</div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <div class="skill-name">AI ja uudet teknologiat</div>
+                <div class="skill-desc">Tekoälyominaisuuksien määrittely (BuildieAI, AI Revisioning Tool), prototypointi AI-työkaluilla ja teknologian rajojen ymmärtäminen tuotekehitysvalintojen pohjana.</div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <div class="skill-name">Mittaaminen ja dataohjautuva kehitys</div>
+                <div class="skill-desc">Kehityksen vaikutuksen seuranta käytön analytiikalla ja asiakasrajapinnan palautteella. Myyntitavoitteiden toteutumisen varmistaminen omien ominaisuuksien osalta.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Muut taidot + kielet -->
+        <div class="col-lg-5 offset-lg-1">
+          <div class="skill-group">
+            <div class="skill-group-title">Muut taidot</div>
+
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <div class="skill-name">Projektipäällikön rooli</div>
+                <div class="skill-desc">Kokemusta projektipäällikön tittelillä työskentelystä. Tuotevision ja kehitysprojektien johtamista yhteistyössä teknisen tiimin, myynnin ja asiakkaiden kanssa.</div>
+              </div>
+            </div>
+
+            <div class="skill-item">
+              <div class="skill-dot"></div>
+              <div>
+                <div class="skill-name">Dokumentaatio ja viestintä</div>
+                <div class="skill-desc">Product spec -dokumentit, tutkimusraportit, pilotointisuunnitelmat ja asiakasmateriaalit.</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Kielitaito-osio: ympyräpyöristetyt "badge"-laatat -->
+          <div class="skill-group mt-4">
+            <div class="skill-group-title">Kielitaito</div>
+            <div class="mt-3">
+              <span class="lang-badge">🇫🇮 Suomi <span class="lang-level">Äidinkieli</span></span>
+              <span class="lang-badge">🇬🇧 Englanti <span class="lang-level">Sujuva</span></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- ESIINTYMISET: Puhujakokemus                  -->
+  <!-- ============================================ -->
+  <section>
+    <div class="container">
+      <span class="section-label">Esiintymiset</span>
+      <h2>Puhujakokemus</h2>
+      <div class="section-divider"></div>
+      <div class="row gy-3 mt-4">
+        <div class="col-md-6">
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <div class="skill-name">2024 · Suomen Vesilaitosyhdistys ry</div>
+              <div class="skill-desc">Paneelikeskustelija, turvallisuus.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <div class="skill-name">2025 · Putkimestarit Ry</div>
+              <div class="skill-desc">Puhuja, MVR-käytännöt ja kehitetty digitaalinen työkalu.</div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12">
+          <!-- col-md-12 = ottaa koko leveyden -->
+          <div class="skill-item">
+            <div class="skill-dot"></div>
+            <div>
+              <div class="skill-name">2025 ja 2026 · Buildien käyttäjäpäivät</div>
+              <div class="skill-desc">Puhuja yli 100 rakennuttajalle. Aiheina dokumentoinnin velvoittaminen hankkeilla, tekoälyn mahdollisuudet työmailla ja BuildieAI-ominaisuuden esittely.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!-- FOOTER: Sama jokaisella sivulla              -->
+  <!-- ============================================ -->
   <footer>
     <div class="container">
       <div class="row align-items-center gy-4">
         <div class="col-lg-5">
           <div class="footer-name">Lea Salonen</div>
-          <p>Tuotesuunnittelija / Tuotehallinta · Tampere</p>
+          <p>Tuotesuunnittelija · Buildie Oy · Tampere</p>
         </div>
         <div class="col-lg-7 text-lg-end">
           <div class="footer-links justify-content-lg-end">
             <a href="about.html">Minusta</a>
-            <a href="skills.html">Osaaminen</a>
             <a href="projects.html">Projektit</a>
             <a href="contact.html">Yhteystiedot</a>
             <a href="https://www.linkedin.com/in/lea-salonen-473432173/" target="_blank" rel="noopener">LinkedIn</a>
