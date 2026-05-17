@@ -1,0 +1,45 @@
+================================================================
+ HTML-KOODIN VALIDOINTI
+ Lea Salonen — Portfolio
+================================================================
+
+Validointiajankohta: 17.05.2026 08:55
+Työkalu: HTMLHint (https://htmlhint.com)
+Versio: 1.9.2
+Sääntöperusta: HTMLHint default ruleset
+
+----------------------------------------------------------------
+Validoidut tiedostot:
+----------------------------------------------------------------
+  - about.html
+  - contact.html
+  - index.html
+  - projects.html
+
+----------------------------------------------------------------
+Tulokset tiedosto tiedostolta:
+----------------------------------------------------------------
+
+>>> about.html
+
+Scanned 1 files, no errors found (22 ms).
+
+>>> contact.html
+
+Scanned 1 files, no errors found (16 ms).
+
+>>> index.html
+
+Scanned 1 files, no errors found (21 ms).
+
+>>> projects.html
+
+Scanned 1 files, no errors found (24 ms).
+
+----------------------------------------------------------------
+Yhteenveto:
+----------------------------------------------------------------
+
+Scanned 4 files, no errors found (41 ms).
+
+================================================================
