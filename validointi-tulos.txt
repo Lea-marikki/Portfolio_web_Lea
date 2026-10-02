@@ -1,0 +1,106 @@
+================================================================
+ HTML-KOODIN VALIDOINTI
+ Lea Salonen — Portfolio
+================================================================
+
+Validointiajankohta: 17.05.2026 08:55
+Työkalu: HTMLHint (https://htmlhint.com)
+Versio: 1.9.2
+Sääntöperusta: HTMLHint default ruleset
+
+----------------------------------------------------------------
+Validoidut tiedostot:
+----------------------------------------------------------------
+  - about.html
+  - contact.html
+  - index.html
+  - projects.html
+
+----------------------------------------------------------------
+Tulokset tiedosto tiedostolta:
+----------------------------------------------------------------
+
+>>> about.html
+
+Scanned 1 files, no errors found (22 ms).
+
+>>> contact.html
+
+Scanned 1 files, no errors found (16 ms).
+
+>>> index.html
+
+Scanned 1 files, no errors found (21 ms).
+
+>>> projects.html
+
+Scanned 1 files, no errors found (24 ms).
+
+----------------------------------------------------------------
+Yhteenveto:
+----------------------------------------------------------------
+
+Scanned 4 files, no errors found (41 ms).
+
+================================================================
+
+================================================================
+ TÄYDENNYS: Validointi päivityksen jälkeen (FI + EN)
+================================================================
+
+Validointiajankohta: 02.10.2026
+Työkalu: Python 3 html.parser -pohjainen rakennetarkistus
+  (HTMLHint vaatii Node.js:n, jota ei ollut asennettuna
+  validointikoneella. Tarkistetut säännöt vastaavat HTMLHintin
+  oletussääntöjä: DOCTYPE, tagien parit ja sisäkkäisyys,
+  <title>, html lang, img alt, a href, uniikit id:t.)
+
+Validoidut tiedostot:
+  - index.html
+  - about.html
+  - projects.html
+  - contact.html
+  - en/index.html
+  - en/about.html
+  - en/projects.html
+  - en/contact.html
+
+Tulokset tiedosto tiedostolta:
+
+>>> index.html
+
+Ei virheitä.
+
+>>> about.html
+
+Ei virheitä.
+
+>>> projects.html
+
+Ei virheitä.
+
+>>> contact.html
+
+Ei virheitä.
+
+>>> en/index.html
+
+Ei virheitä.
+
+>>> en/about.html
+
+Ei virheitä.
+
+>>> en/projects.html
+
+Ei virheitä.
+
+>>> en/contact.html
+
+Ei virheitä.
+
+Yhteenveto: 8 tiedostoa, ei virheitä.
+Lisäksi tarkistettu, että kaikki suhteelliset linkit ja kuvapolut
+(myös en/-kansiosta ../css- ja ../images-polut) osoittavat
+olemassa oleviin tiedostoihin.
+================================================================

@@ -1,99 +1,84 @@
 <!DOCTYPE html>
-<html lang="fi">
+<!-- English version of ../contact.html. -->
+<html lang="en">
 <head>
-  <!-- HEAD-osion tarkemmat selitykset löytyvät index.html-tiedostosta. -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Lea Salonen — Yhteystiedot. Ota yhteyttä." />
-  <title>Yhteystiedot — Lea Salonen</title>
+  <meta name="description" content="Lea Salonen — Contact. Get in touch." />
+  <title>Contact — Lea Salonen</title>
+  <link rel="alternate" hreflang="fi" href="https://lea-marikki.github.io/Portfolio_web_Lea/contact.html" />
+  <link rel="alternate" hreflang="en" href="https://lea-marikki.github.io/Portfolio_web_Lea/en/contact.html" />
+  <link rel="alternate" hreflang="x-default" href="https://lea-marikki.github.io/Portfolio_web_Lea/contact.html" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
 </head>
 <body>
 
-  <!-- ============================================ -->
-  <!-- NAV: Sama navigaatio.                        -->
-  <!-- "Yhteystiedot" on .active tällä sivulla.     -->
-  <!-- ============================================ -->
+  <!-- NAV -->
   <nav class="navbar navbar-expand-lg">
     <div class="container">
       <a class="navbar-brand" href="index.html">Lea Salonen</a>
       <button class="navbar-toggler" type="button"
         data-bs-toggle="collapse" data-bs-target="#mainNav"
-        aria-controls="mainNav" aria-expanded="false" aria-label="Avaa navigaatio">
+        aria-controls="mainNav" aria-expanded="false" aria-label="Open navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="index.html">Etusivu</a></li>
-          <li class="nav-item"><a class="nav-link" href="about.html">Minusta</a></li>
-          <li class="nav-item"><a class="nav-link" href="projects.html">Projektit</a></li>
-          <li class="nav-item"><a class="nav-link active" href="contact.html">Yhteystiedot</a></li>
-          <!-- ↑ Aktiivinen linkki tällä sivulla -->
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
         </ul>
+        <div class="lang-switch" aria-label="Language">
+          <a class="lang-switch-link" href="../contact.html" lang="fi" hreflang="fi" aria-label="Suomeksi">FI</a>
+          <span class="lang-switch-sep" aria-hidden="true">/</span>
+          <span class="lang-switch-current" lang="en" aria-current="true">EN</span>
+        </div>
       </div>
     </div>
   </nav>
 
-  <!-- ============================================ -->
-  <!-- PAGE HERO: Sivun otsikkoalue                 -->
-  <!-- Sama .page-hero-luokka kuin projects.html:ssä-->
-  <!-- ============================================ -->
+  <!-- PAGE HERO -->
   <div class="page-hero">
     <div class="container">
-      <span class="section-label">Yhteystiedot</span>
-      <h1>Ollaan<br /><em>yhteydessä</em></h1>
-      <p>Verkostoidun mielelläni. Ota yhteyttä, jos haluat vaihtaa ajatuksia rakennusalan tuotekehityksestä ja AI:sta tai sinulla on kiinnostava tilaisuus mielessä.</p>
+      <span class="section-label">Contact</span>
+      <h1>Let's<br /><em>keep in touch</em></h1>
+      <p>I enjoy networking. Get in touch if you would like to exchange ideas about product development and AI in the construction industry, or if you have an interesting opportunity in mind.</p>
     </div>
   </div>
 
-  <!-- ============================================ -->
-  <!-- YHTEYSTIEDOT: Kolme korttia rinnakkain       -->
-  <!-- Sähköposti, LinkedIn ja sijainti.            -->
-  <!-- justify-content-center keskittää kortit.     -->
-  <!-- ============================================ -->
+  <!-- CONTACT CARDS -->
   <section>
     <div class="container">
       <div class="row justify-content-center gy-4">
 
-        <!-- ===== Kortti 1: Sähköposti (klikattava) ===== -->
         <div class="col-sm-4 col-lg-3">
           <a href="mailto:lea.marikki@gmail.com" class="contact-card contact-card--link">
-            <!-- mailto:-linkki avaa käyttäjän sähköpostiohjelman valmiiksi vastaanottajalla. -->
-            <!-- contact-card--link on muunnos perus contact-card:sta: hover-efekti tummenee, koska se on klikattava. -->
-
             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
               <rect x="2" y="4" width="20" height="16" rx="2"/>
               <path d="m2 7 10 7 10-7"/>
-              <!-- Kirjekuori-ikoni: suorakaide + V-kirjain läppäämään -->
             </svg>
             <span class="contact-card-value">lea.marikki@gmail.com</span>
           </a>
         </div>
 
-        <!-- ===== Kortti 2: LinkedIn (klikattava, ulkoinen) ===== -->
         <div class="col-sm-4 col-lg-3">
           <a href="https://www.linkedin.com/in/lea-salonen-473432173/" target="_blank" rel="noopener" class="contact-card contact-card--link">
-            <!-- target="_blank" avaa uuteen välilehteen, rel="noopener" on tietoturvaa -->
             <svg class="contact-icon" viewBox="0 0 24 24" fill="currentColor">
               <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-              <!-- LinkedIn-logo SVG-muodossa -->
             </svg>
             <span class="contact-card-value">Lea Salonen</span>
           </a>
         </div>
 
-        <!-- ===== Kortti 3: Sijainti (ei klikattava) ===== -->
         <div class="col-sm-4 col-lg-3">
           <div class="contact-card">
-            <!-- HUOM: Tämä on <div>, ei <a> — ei ole linkki, vain informaatiota. -->
-            <!-- Siksi ei ole contact-card--link -luokkaa -->
             <svg class="contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
               <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
               <circle cx="12" cy="9" r="2.5"/>
-              <!-- Karttapin-ikoni -->
             </svg>
-            <span class="contact-card-value">Tampere / Pirkanmaa</span>
+            <span class="contact-card-value">Tampere, Finland</span>
           </div>
         </div>
 
@@ -101,21 +86,19 @@
     </div>
   </section>
 
-  <!-- ============================================ -->
-  <!-- FOOTER: Sama jokaisella sivulla              -->
-  <!-- ============================================ -->
+  <!-- FOOTER -->
   <footer>
     <div class="container">
       <div class="row align-items-center gy-4">
         <div class="col-lg-5">
           <div class="footer-name">Lea Salonen</div>
-          <p>Tuotesuunnittelija · Buildie Oy · Tampere</p>
+          <p>Business Team Lead, Product Development · Buildie Oy · Tampere</p>
         </div>
         <div class="col-lg-7 text-lg-end">
           <div class="footer-links justify-content-lg-end">
-            <a href="about.html">Minusta</a>
-            <a href="projects.html">Projektit</a>
-            <a href="contact.html">Yhteystiedot</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
             <a href="https://www.linkedin.com/in/lea-salonen-473432173/" target="_blank" rel="noopener">LinkedIn</a>
           </div>
         </div>

@@ -218,6 +218,44 @@ p {
   box-shadow: none;              /* Pois Bootstrapin sininen "focus"-renkaa */
 }
 
+/* Kielivalitsin FI / EN navigaation oikeassa reunassa.
+   Nykyinen kieli näkyy tummana, toinen kieli on linkki
+   saman sivun käännökseen. Mobiilissa valitsin on
+   hampurilaisvalikon sisällä nav-linkkien alla. */
+.lang-switch {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: 1.25rem;
+  padding-left: 1.25rem;
+  border-left: 1px solid var(--border);  /* Ohut pystyviiva erottaa valitsimen linkeistä */
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lang-switch-current {
+  color: var(--text);
+}
+
+.lang-switch-sep {
+  color: var(--border);
+}
+
+.lang-switch-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+.lang-switch-link:hover,
+.lang-switch-link:focus-visible {
+  color: var(--accent-dark);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
 /* ===========================
    BUTTONS
    Kaksi tyyliä: täyttöväri (primary) ja reuna (outline).
@@ -1090,6 +1128,12 @@ footer .footer-links a:hover {
 @media (max-width: 768px) {
   .navbar-nav .nav-link {
     margin: 0.25rem 0;            /* Pystysuunnan välit, ei vaakasuunnan */
+  }
+  /* Kielivalitsin omalle rivilleen hampurilaisvalikon loppuun */
+  .lang-switch {
+    margin: 0.75rem 0 0.25rem;
+    padding-left: 0;
+    border-left: none;
   }
   .hero-cta {
     flex-direction: column;

@@ -1,6 +1,8 @@
 # Portfolio — Lea Salonen
 
-Portfoliosivu kurssityönä, Laurea-ammattikorkeakoulu.
+Portfoliosivu kurssityönä, Laurea-ammattikorkeakoulu. Julkaistu GitHub Pagesissa: https://lea-marikki.github.io/Portfolio_web_Lea/
+
+Sivusto on saatavilla suomeksi (juuri) ja englanniksi (`en/`-kansio). Kurssin harjoitustehtävät (WS01–WS06) on siirretty `arkisto/`-kansioon.
 
 ## Lähteet ja viitteet
 
@@ -24,4 +26,6 @@ Portfoliosivu kurssityönä, Laurea-ammattikorkeakoulu.
   - Sivurakenteen ja visuaalisen ilmeen ideointi
   - Sisällön muotoilu ja tekstien jäsentely CV:n ja Confluence-dokumentaation pohjalta
   - Tiedostorakenteen ja kansioinnin suunnittelu
+  - Englanninkielisen version (`en/`-kansio) kääntäminen ja FI/EN-kielivalinnan toteutus navigaatioon (Claude Fable 5.1, lokakuu 2026)
+  - Sivuston rakenteen korjaaminen GitHub Pagesia varten: portfolio siirrettiin repon juureen, jotta pääosoite avaa etusivun (Claude Fable 5.1, lokakuu 2026)
 - Kaikki sisältö (projektikuvaukset, urapolku, osaaminen) perustuu tekijän omiin tietoihin ja dokumentteihin. Koodi on katselmoitu ja hyväksytty tekijän toimesta ennen committointia.

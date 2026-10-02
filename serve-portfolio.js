@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 const PORT = 3000;
-const ROOT = path.join(__dirname, 'portfolio Lea Salonen');
+const ROOT = __dirname;
 
 const mimeTypes = {
   '.html': 'text/html; charset=utf-8',
@@ -12,6 +12,7 @@ const mimeTypes = {
   '.png':  'image/png',
   '.jpg':  'image/jpeg',
   '.svg':  'image/svg+xml',
+  '.webp': 'image/webp',
   '.ico':  'image/x-icon',
 };
 
